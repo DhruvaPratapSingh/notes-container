@@ -1,0 +1,95 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 100%;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #cf9aff, #95c0ff);
+        padding-top: 4%;
+        padding-left: 10%;
+      }
+      .btn {
+        margin: 20px 10px;
+        outline: none;
+        border: none;
+        background: linear-gradient(135deg, #cf9aff, #6410ea);
+        border: 1px solid greenyellow;
+        padding: 15px;
+        border-radius: 30px;
+        font-size: large;
+        cursor: pointer;
+      }
+      .notes-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 16px;
+        margin:20px 10px;
+        padding: 16px;
+        width: 100%;
+        max-width: 1200px;
+        box-sizing: border-box;
+      }
+      .input-box {
+        color: white;
+        font-size: large;
+        position: relative;
+        background: linear-gradient(
+          135deg,
+          rgb(32, 45, 129),
+          rgb(30, 147, 183)
+        );
+        width: 100%;
+        max-width: 500px;
+        min-height: 150px;
+        outline: none;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px -30px;
+        border: 3px solid green;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: border 0.3s ease, box-shadow 0.3s ease;
+        animation: borderAnimation 3s linear infinite;
+      }
+
+      @keyframes borderAnimation {
+        0% {
+          border-image-source: linear-gradient(
+            45deg,
+            #ff9a9e,
+            #fad0c4,
+            #fbc2eb
+          );
+        }
+        50% {
+          border-image-source: linear-gradient(
+            45deg,
+            #fbc2eb,
+            #a1c4fd,
+            #c2e9fb
+          );
+        }
+        100% {
+          border-image-source: linear-gradient(
+            45deg,
+            #c2e9fb,
+            #ff9a9e,
+            #fad0c4
+          );
+        }
+      }
+
+      .input-box:hover {
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+      .input-box img {
+        position: absolute;
+        font-size: small;
+        bottom: 5px;
+        right: 5px;
+        cursor: pointer;
+      }

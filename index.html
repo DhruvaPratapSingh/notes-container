@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes App</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>📑 Notes</h1>
+      <button class="btn">🖋️Create Notes</button>
+      <div class="notes-container">
+        <!-- <p contenteditable="true" class="input-box">
+                <img src="" alt="del">
+            </p> -->
+      </div>
+    </div>
+    <script>
+      let notes_container = document.querySelector(".notes-container");
+      let btn = document.querySelector(".btn");
+      function setdata() {
+        localStorage.setItem("notes", notes_container.innerHTML);
+      }
+      function showdata() {
+        if (localStorage.getItem("notes")) {
+          notes_container.innerHTML = localStorage.getItem("notes");
+          let notes = document.querySelectorAll(".input-box");
+          notes.forEach((nt) => {
+            nt.onkeyup = function () {
+              setdata();
+            };
+          });
+        }
+      }
+      btn.addEventListener("click", () => {
+        let inputBox = document.createElement("p");
+        let img = document.createElement("img");
+        inputBox.className = "input-box";
+        inputBox.setAttribute("contenteditable", "true");
+        img.src = "";
+        img.alt = "del";
+        notes_container.appendChild(inputBox).appendChild(img);
+        inputBox.onkeyup = function () {
+          setdata();
+        };
+        setdata();
+      });
+      notes_container.addEventListener("click", (e) => {
+        if (e.target.tagName === "IMG") {
+          e.target.parentElement.remove();
+          setdata();
+        }
+      });
+      showdata();
+    </script>
+  </body>
+</html>
