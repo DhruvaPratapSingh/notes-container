@@ -87,6 +87,7 @@
         transition: transform 0.3s ease;
       }
       .input-box img {
+        color: white;
         position: absolute;
         font-size: small;
         bottom: 5px;
