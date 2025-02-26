@@ -87,6 +87,7 @@
         transition: transform 0.3s ease;
       }
       .input-box img {
+           background: linear-gradient(135deg, white, white);
         color: white;
         position: absolute;
         font-size: small;
