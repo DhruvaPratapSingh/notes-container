@@ -87,6 +87,10 @@
         transition: transform 0.3s ease;
       }
       .input-box img {
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+        border-radius: 20px;
         position: absolute;
         font-size: small;
         bottom: 10px;
